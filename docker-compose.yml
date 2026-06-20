@@ -1,0 +1,12 @@
+services:
+  localstack:
+    image: localstack/localstack:3.4
+    ports:
+      - "127.0.0.1:4566:4566"
+    command: []
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4566/_localstack/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
